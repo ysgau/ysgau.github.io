@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>當責領導力：如呼吸般的企業文化</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 400px; max-height: 50vh; }
+        @media (max-width: 768px) { .chart-container { height: 300px; } }
+        .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .tab-btn.active { background-color: #0284c7; color: white; border-color: #0284c7; }
+        .step-card { transition: all 0.3s ease; }
+        .step-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-sky-200 selection:text-sky-900">
+
+<!-- Chosen Palette: Slate & Sky Blue (Background: Slate 50, Text: Slate 800, Primary: Sky 600, Accent: Teal 500. Represents clarity, professionalism, and the 'air/breathing' metaphor.) -->
+<!-- Application Structure Plan: A linear, scrolling single-page narrative designed to build understanding sequentially. 1. Introduction to Core (What & Why), 2. Culture Shift (Visualizing the change from blame to accountability), 3. Organizational Roles (Interactive exploration of who does what), 4. Modern Applications (How it fits current trends), 5. The 'Breathing' Framework (The requested custom methodology integrating Learning Organizations). This structure moves from theory to systemic application to daily habit. -->
+<!-- Visualization & Content Choices: 1. Core SOSD: Interactive text cards for step-by-step learning. 2. Culture Shift: Radar Chart (Chart.js) to compare 'Blame' vs 'Accountability' cultures across multiple dimensions, visually proving the superiority of accountability. 3. Roles: Interactive tabbed interface to organize role-specific content cleanly without cluttering the page. 4. Results Pyramid: HTML/CSS layered pyramid showing the foundation of culture. 5. Breathing Framework: Custom CSS grid/flex layout visualizing the cycle of Learning Org + SOSD. No SVG/Mermaid used. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="fixed w-full z-50 glass-card border-b border-slate-200 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-sky-700 tracking-wider">ACCOUNTABILITY</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#core" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition">核心精華</a>
+                    <a href="#culture" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition">文化轉型</a>
+                    <a href="#roles" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition">階層實踐</a>
+                    <a href="#trends" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition">企業應用</a>
+                    <a href="#framework" class="text-sm font-medium text-sky-600 bg-sky-50 px-3 py-1 rounded-full hover:bg-sky-100 transition">呼吸式當責框架</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">
+            當責領導力：<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-teal-500">如呼吸般的企業文化</span>
+        </h1>
+        <p class="mt-4 max-w-3xl text-lg md:text-xl text-slate-600 mx-auto leading-relaxed">
+            當責不只是事後的咎責，而是主動為結果交出漂亮成績單的選擇。本研究探討如何將「當責 (Accountability)」結合「學習型組織」，讓跨越縫隙的協作成效，如同員工每天呼吸的空氣般自然且不可或缺。
+        </p>
+    </header>
+
+    <section id="core" class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-slate-900">1. 當責領導力的核心</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">當責（Accountability）超越了傳統的負責（Responsibility）。<br>負責是「把份內事情做完」，當責是「確保最終結果達成」。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-sky-800 mb-6">結果金字塔 (Results Pyramid)</h3>
+                    <p class="text-slate-600 mb-4">企業文化不是口號，而是由底層的「經驗」層層堆疊而成的結果。領導者必須透過創造新經驗，來改變員工信念，進而驅動當責行為。</p>
+                    
+                    <div class="flex flex-col items-center space-y-2 mt-8">
+                        <div class="w-full max-w-xs bg-sky-600 text-white font-bold py-3 text-center rounded-t-lg shadow-md z-40">結果 (Results)</div>
+                        <div class="w-full max-w-sm bg-sky-500 text-white font-bold py-3 text-center shadow-md z-30">行動 (Actions)</div>
+                        <div class="w-full max-w-md bg-sky-400 text-white font-bold py-3 text-center shadow-md z-20">信念 (Beliefs)</div>
+                        <div class="w-full max-w-lg bg-sky-300 text-sky-900 font-bold py-4 text-center rounded-b-lg shadow-md z-10 border-b-4 border-teal-500">
+                            經驗 (Experiences)<br>
+                            <span class="text-sm font-normal">文化的根基：領導者創造的環境</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-700 mb-6">當責四步驟 (SOSD)</h3>
+                    <p class="text-slate-600 mb-6">克服「被害者循環」，主動跨越當責線 (The Line) 的具體實踐路徑。</p>
+                    <div class="space-y-4">
+                        <div class="step-card bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start cursor-pointer">
+                            <div class="bg-teal-100 text-teal-700 font-black text-xl w-12 h-12 flex items-center justify-center rounded-lg shrink-0">S</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-800">正視現狀 (See It)</h4>
+                                <p class="text-sm text-slate-600 mt-1">承認現實與問題的存在，不逃避、不掩蓋。傾聽他人的回饋，看見全局與當責縫隙。</p>
+                            </div>
+                        </div>
+                        <div class="step-card bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start cursor-pointer">
+                            <div class="bg-sky-100 text-sky-700 font-black text-xl w-12 h-12 flex items-center justify-center rounded-lg shrink-0">O</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-800">承擔責任 (Own It)</h4>
+                                <p class="text-sm text-slate-600 mt-1">將組織的目標視為自己的目標。不再說「這不是我的工作」，而是問「我還能多做什麼」。</p>
+                            </div>
+                        </div>
+                        <div class="step-card bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start cursor-pointer">
+                            <div class="bg-indigo-100 text-indigo-700 font-black text-xl w-12 h-12 flex items-center justify-center rounded-lg shrink-0">S</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-800">解決方案 (Solve It)</h4>
+                                <p class="text-sm text-slate-600 mt-1">打破成規，跨越部門界線尋找創新解法。當遇到障礙時，主動提出替代方案而非抱怨。</p>
+                            </div>
+                        </div>
+                        <div class="step-card bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start cursor-pointer">
+                            <div class="bg-blue-100 text-blue-700 font-black text-xl w-12 h-12 flex items-center justify-center rounded-lg shrink-0">D</div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-slate-800">著手完成 (Do It)</h4>
+                                <p class="text-sm text-slate-600 mt-1">將承諾轉化為具體行動，堅持到底並交出最終成果。為最終的成敗負起完全責任。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="culture" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-slate-900">2. 從問責到當責的文化轉型</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">傳統的「問責 (Blame) 文化」以恐懼驅動，導致員工隱瞞錯誤與推諉；「當責 (Accountability) 文化」則以共同目標驅動，建立心理安全感與主動性。</p>
+            </div>
+
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">組織行為維度比較</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-red-500 font-bold flex items-center">
+                                    <span class="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
+                                    問責文化 (Blame Culture) 的抗拒與衝突
+                                </h4>
+                                <ul class="mt-2 text-sm text-slate-600 space-y-2 list-disc pl-5">
+                                    <li>人員觀念停留在「多做多錯，少做少錯」。</li>
+                                    <li>部門間存在巨大的「當責縫隙 (Accountability Gap)」，互踢皮球。</li>
+                                    <li>關注點在於「誰該負責？」而非「如何解決？」。</li>
+                                </ul>
+                            </div>
+                            <hr class="border-slate-100">
+                            <div>
+                                <h4 class="text-teal-600 font-bold flex items-center">
+                                    <span class="w-3 h-3 rounded-full bg-teal-500 mr-2"></span>
+                                    當責文化 (Accountability Culture) 的核心導正
+                                </h4>
+                                <ul class="mt-2 text-sm text-slate-600 space-y-2 list-disc pl-5">
+                                    <li>提供「容錯與授權的新經驗」，消除恐懼。</li>
+                                    <li>倡導「交集處就是責任區」，縫合跨部門灰色地帶。</li>
+                                    <li>專注於系統性思考，追求整體最佳化而非局部最佳化。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full flex justify-center">
+                        <div class="chart-container">
+                            <canvas id="cultureRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roles" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold text-slate-900">3. 企業各階層的角色與實踐</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">當責不是單一階層的責任。由上而下的賦能與由下而上的擔當，才能形成強大的組織動能。</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/3 flex flex-row md:flex-col gap-2 overflow-x-auto pb-2 md:pb-0">
+                    <button class="role-btn active px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-slate-50 whitespace-nowrap md:whitespace-normal" data-role="top">
+                        <div class="text-lg">高階主管</div>
+                        <div class="text-sm font-normal opacity-80 mt-1">塑造經驗與文化</div>
+                    </button>
+                    <button class="role-btn px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 whitespace-nowrap md:whitespace-normal" data-role="middle">
+                        <div class="text-lg">中階主管</div>
+                        <div class="text-sm font-normal opacity-80 mt-1">連結縫隙與賦能</div>
+                    </button>
+                    <button class="role-btn px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 whitespace-nowrap md:whitespace-normal" data-role="front">
+                        <div class="text-lg">基層員工</div>
+                        <div class="text-sm font-normal opacity-80 mt-1">執行與向上當責</div>
+                    </button>
+                </div>
+
+                <div class="md:w-2/3">
+                    <div id="role-content" class="bg-slate-50 p-8 rounded-2xl border border-slate-200 min-h-[300px]">
+                        <h3 class="text-2xl font-bold text-sky-800 mb-2">高階主管：文化塑造者</h3>
+                        <p class="text-slate-600 mb-6 pb-6 border-b border-slate-200">高層不僅是策略制定者，更是「當責環境」的建築師。必須以身作則，建立心理安全感。</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-white border border-slate-200 rounded px-2 py-1 text-xs font-bold text-slate-500 mr-3 mt-0.5">任務</div>
+                                <p class="text-slate-700">運用「結果金字塔」，刻意為組織創造**「容錯、授權、透明」的新經驗**。</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-white border border-slate-200 rounded px-2 py-1 text-xs font-bold text-slate-500 mr-3 mt-0.5">實踐</div>
+                                <p class="text-slate-700">當目標未達時，停止問「是誰的錯？」，改問「系統哪裡出了問題？我們需要什麼資源來解決？」。</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-white border border-slate-200 rounded px-2 py-1 text-xs font-bold text-slate-500 mr-3 mt-0.5">焦點</div>
+                                <p class="text-slate-700">確保全體員工清晰理解「關鍵目標 (Key Results)」，讓團隊有共同的北極星。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trends" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-white">4. 當責文化應用於當今企業轉型</h2>
+                <p class="mt-4 text-slate-400 max-w-2xl mx-auto">面對數位轉型、敏捷組織與智慧製造等熱門議題，當責文化是決定轉型成敗的最底層作業系統。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-sky-500 transition duration-300">
+                    <div class="text-3xl mb-4">💻</div>
+                    <h3 class="text-xl font-bold text-sky-400 mb-3">數位轉型<br><span class="text-sm font-normal text-slate-400">跨界當責 (Cross-functional)</span></h3>
+                    <p class="text-slate-300 text-sm mb-4">數位轉型最常失敗於 IT 與業務的脫節。系統上線不是結束，而是雙方共同當責的開始。</p>
+                    <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+                        <li><strong class="text-slate-200">業務端：</strong>不只提需求，更要對系統上線後的數據正確性與流程優化當責 (Own it)。</li>
+                        <li><strong class="text-slate-200">IT端：</strong>不只寫程式，更要對使用者的操作順暢度與最終商業價值當責 (Solve it)。</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-teal-500 transition duration-300">
+                    <div class="text-3xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold text-teal-400 mb-3">敏捷組織<br><span class="text-sm font-normal text-slate-400">容錯與快速迭代</span></h3>
+                    <p class="text-slate-300 text-sm mb-4">敏捷需要試錯，若陷於「追責心態」，團隊將不敢創新，導致敏捷流於形式上的儀式。</p>
+                    <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+                        <li><strong class="text-slate-200">See it & Solve it：</strong>產品不如預期時，不抓戰犯，而是團隊共同承認數據表現，快速 Pivot 修正方向。</li>
+                        <li><strong class="text-slate-200">去中心化當責：</strong>實行類似騰訊「賽馬機制」，鼓勵由下而上打破框架的當責行動。</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-indigo-400 transition duration-300">
+                    <div class="text-3xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold text-indigo-400 mb-3">智慧製造 (工業4.0)<br><span class="text-sm font-normal text-slate-400">數據驅動的所有權</span></h3>
+                    <p class="text-slate-300 text-sm mb-4">從「照表操課的雙手」轉變為「製程數據的管理者」。基層必須具備處理異常的當責意識。</p>
+                    <ul class="text-sm text-slate-400 space-y-2 list-disc pl-4">
+                        <li><strong class="text-slate-200">主動介入：</strong>當系統警示異常，不再只是通報，而是啟動 Do it，參與異常排除的優化循環。</li>
+                        <li><strong class="text-slate-200">系統思考：</strong>理解單一機台數據與整體供應鏈、甚至是 ESG 碳排目標的關聯。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="framework" class="py-20 bg-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl font-black text-slate-900 mb-4">5. 「當責呼吸論」實踐框架</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    為使當責成為企業核心，我們必須將 <strong class="text-sky-700">當責 (SOSD)</strong> 與 <strong class="text-teal-700">學習型組織 (彼得·聖吉五項修練)</strong> 深度融合。
+                    這套設計將當責化為生理機能的隱喻：像呼吸空氣般自然運作，持續推動企業有機成長。
+                </p>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-slate-200 relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-sky-100 opacity-50"></div>
+                <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 rounded-full bg-teal-100 opacity-50"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+                    
+                    <div class="md:w-1/2 space-y-8 relative">
+                        <div class="absolute left-6 top-10 bottom-10 w-1 bg-gradient-to-b from-sky-300 via-teal-300 to-indigo-300 hidden md:block"></div>
+                        
+                        <div class="framework-step relative pl-0 md:pl-16">
+                            <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-sky-500 items-center justify-center border-4 border-white shadow"></div>
+                            <h4 class="text-xl font-bold text-sky-800 flex items-center">
+                                <span class="bg-sky-100 text-sky-800 text-sm px-2 py-1 rounded mr-3">吸氣</span> 
+                                正視與願景 (See it + Shared Vision)
+                            </h4>
+                            <p class="mt-2 text-slate-600 text-sm">
+                                吸入外部資訊與組織目標。領導者建立<strong class="text-slate-800">共同願景</strong>，員工則以客觀數據<strong class="text-slate-800">正視現狀</strong>。看清全局的「空氣品質」，絕不忽視房間裡的大象。
+                            </p>
+                        </div>
+
+                        <div class="framework-step relative pl-0 md:pl-16">
+                            <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-teal-500 items-center justify-center border-4 border-white shadow"></div>
+                            <h4 class="text-xl font-bold text-teal-800 flex items-center">
+                                <span class="bg-teal-100 text-teal-800 text-sm px-2 py-1 rounded mr-3">內化</span> 
+                                承擔與心智 (Own it + Mental Models)
+                            </h4>
+                            <p class="mt-2 text-slate-600 text-sm">
+                                氧氣交換過程。挑戰舊有推諉的<strong class="text-slate-800">心智模式</strong>，將系統問題轉化為個人責任。從「那是別人的錯」轉念為「我能在這其中<strong class="text-slate-800">承擔什麼責任</strong>」。
+                            </p>
+                        </div>
+
+                        <div class="framework-step relative pl-0 md:pl-16">
+                            <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-blue-500 items-center justify-center border-4 border-white shadow"></div>
+                            <h4 class="text-xl font-bold text-blue-800 flex items-center">
+                                <span class="bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded mr-3">循環</span> 
+                                解決與共學 (Solve it + Team Learning)
+                            </h4>
+                            <p class="mt-2 text-slate-600 text-sm">
+                                養分隨血液傳遞至全身。面對挑戰，透過<strong class="text-slate-800">團隊學習</strong>進行深度匯談，打破部門穀倉，共同設計創新<strong class="text-slate-800">解決方案</strong>。修補組織內的當責縫隙。
+                            </p>
+                        </div>
+
+                        <div class="framework-step relative pl-0 md:pl-16">
+                            <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-indigo-500 items-center justify-center border-4 border-white shadow"></div>
+                            <h4 class="text-xl font-bold text-indigo-800 flex items-center">
+                                <span class="bg-indigo-100 text-indigo-800 text-sm px-2 py-1 rounded mr-3">呼氣</span> 
+                                執行與超越 (Do it + Personal Mastery)
+                            </h4>
+                            <p class="mt-2 text-slate-600 text-sm">
+                                產生動能並呼出結果。不僅是<strong class="text-slate-800">著手完成</strong>任務，更是實踐<strong class="text-slate-800">自我超越</strong>。將結果轉化為組織的「新經驗」，持續優化下一次的呼吸循環。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 flex flex-col items-center justify-center text-center">
+                        <div class="w-full max-w-sm aspect-square rounded-full border-8 border-slate-50 flex items-center justify-center relative shadow-2xl bg-white p-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-dashed border-sky-200 animate-[spin_60s_linear_infinite]"></div>
+                            <div class="absolute inset-4 rounded-full border border-teal-100 animate-[spin_40s_linear_infinite_reverse]"></div>
+                            
+                            <div>
+                                <h5 class="text-sm font-bold text-slate-400 mb-1 tracking-widest uppercase">核心環境</h5>
+                                <h3 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-br from-sky-600 to-indigo-600 mb-2">系統思考</h3>
+                                <p class="text-xs text-slate-500 max-w-xs px-4">
+                                    (Systems Thinking)<br><br>
+                                    如同包裹著呼吸循環的「空間」。<br>
+                                    唯有看見系統的整體動態，<br>
+                                    當責行動才不會流於局部優化，<br>
+                                    而是促進組織的全面進化。
+                                </p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-sm text-slate-500 font-medium">當責文化 x 學習型組織的有機結合模型</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© 2026 當責領導力研究與實踐框架。以學習型組織理念，打造永續成長的企業文化。</p>
+        </div>
+    </footer>
+
+    <script>
+        const roleData = {
+            top: {
+                title: "高階主管：文化塑造者",
+                desc: "高層不僅是策略制定者，更是「當責環境」的建築師。必須以身作則，建立心理安全感。",
+                tasks: [
+                    { label: "任務", text: "運用「結果金字塔」，刻意為組織創造<strong>「容錯、授權、透明」的新經驗</strong>。" },
+                    { label: "實踐", text: "當目標未達時，停止問「是誰的錯？」，改問「系統哪裡出了問題？我們需要什麼資源來解決？」。" },
+                    { label: "焦點", text: "確保全體員工清晰理解「關鍵目標 (Key Results)」，讓團隊有共同的北極星。" }
+                ],
+                color: "text-sky-800"
+            },
+            middle: {
+                title: "中階主管：縫隙連結與賦能者",
+                desc: "中階主管是消弭「當責縫隙」的關鍵樞紐。必須將高層戰略轉化為行動，並破除部門本位主義。",
+                tasks: [
+                    { label: "任務", text: "處理跨部門的灰色地帶。認知到「交集處就是我的責任區」，主動跨出界線溝通。" },
+                    { label: "實踐", text: "輔導團隊運用 SOSD 模型。當部屬遭遇困難時，不直接給答案，而是引導他們找出 <strong>Solve it (解決方案)</strong>。" },
+                    { label: "焦點", text: "資源協調與清除障礙，確保基層具備 <strong>Do it (著手完成)</strong> 的條件。" }
+                ],
+                color: "text-teal-800"
+            },
+            front: {
+                title: "基層員工：執行與向上當責者",
+                desc: "身處第一線，最清楚痛點與客戶需求。當責不是盲目服從，而是主動發掘問題並確保成果。",
+                tasks: [
+                    { label: "任務", text: "打破「這不是我份內工作」的心智模式。對自己產出的品質與最終影響 <strong>Own it (承擔責任)</strong>。" },
+                    { label: "實踐", text: "展現「向上當責」。當發現流程不合理或目標有偏差時，主動 <strong>See it (正視現狀)</strong> 並向上呈報與建議。" },
+                    { label: "焦點", text: "具備「系統思考」意識，理解自己的工作環節如何影響公司整體關鍵目標的達成。" }
+                ],
+                color: "text-indigo-800"
+            }
+        };
+
+        const roleBtns = document.querySelectorAll('.role-btn');
+        const roleContent = document.getElementById('role-content');
+
+        roleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                roleBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-sky-600', 'text-white', 'border-sky-600');
+                    b.classList.add('bg-white', 'text-slate-600');
+                });
+                
+                btn.classList.add('active');
+                btn.classList.remove('bg-white', 'text-slate-600');
+                btn.style.backgroundColor = '#0284c7';
+                btn.style.color = 'white';
+                btn.style.borderColor = '#0284c7';
+
+                const role = btn.getAttribute('data-role');
+                const data = roleData[role];
+
+                let tasksHTML = data.tasks.map(t => `
+                    <div class="flex items-start opacity-0 translate-y-4 animate-[fadeInUp_0.3s_ease_forwards]">
+                        <div class="bg-white border border-slate-200 rounded px-2 py-1 text-xs font-bold text-slate-500 mr-3 mt-0.5 shrink-0">${t.label}</div>
+                        <p class="text-slate-700">${t.text}</p>
+                    </div>
+                `).join('');
+
+                roleContent.innerHTML = `
+                    <h3 class="text-2xl font-bold ${data.color} mb-2 transition-opacity duration-300">${data.title}</h3>
+                    <p class="text-slate-600 mb-6 pb-6 border-b border-slate-200">${data.desc}</p>
+                    <div class="space-y-4">
+                        ${tasksHTML}
+                    </div>
+                `;
+            });
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctxRadar = document.getElementById('cultureRadarChart').getContext('2d');
+            
+            new Chart(ctxRadar, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        '主動性與當責', 
+                        '心理安全感/容錯率', 
+                        '跨部門協作 (無縫隙)', 
+                        '系統思考 (看全貌)', 
+                        '創新解決能力'
+                    ],
+                    datasets: [{
+                        label: '問責文化 (Blame)',
+                        data: [30, 20, 35, 25, 30],
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        pointBackgroundColor: 'rgba(239, 68, 68, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(239, 68, 68, 1)',
+                        borderWidth: 2
+                    }, {
+                        label: '當責文化 (Accountability)',
+                        data: [90, 85, 80, 75, 85],
+                        backgroundColor: 'rgba(20, 184, 166, 0.4)',
+                        borderColor: 'rgba(20, 184, 166, 1)',
+                        pointBackgroundColor: 'rgba(20, 184, 166, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(20, 184, 166, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            pointLabels: {
+                                font: { family: "'Noto Sans TC', sans-serif", size: 12, weight: '500' },
+                                color: '#475569'
+                            },
+                            ticks: {
+                                display: false,
+                                min: 0,
+                                max: 100
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: "'Noto Sans TC', sans-serif" },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleFont: { family: "'Noto Sans TC', sans-serif", size: 14 },
+                            bodyFont: { family: "'Noto Sans TC', sans-serif", size: 13 },
+                            padding: 12,
+                            cornerRadius: 8
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

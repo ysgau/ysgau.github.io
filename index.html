@@ -52,6 +52,7 @@
         }
     </script>
   <link rel="stylesheet" href="styles.css">
+  <script src="articles-data.js"></script>
 </head>
 
 <body>
@@ -60,7 +61,8 @@
       <a class="brand" href="#top" aria-label="AIMS Fellows 首頁"><span class="mark">AI</span><span><strong>AIMS
             Fellows</strong><span>Research on Smart Manufacturing and Organizational Transformation</span></span></a>
       <div class="links">
-        <a href="#explore">研究主題</a><a href="#featured">精選文章</a><a href="#explore">最新文章</a>
+        <a href="#featured">精選文章</a>
+        <a href="#explore">文章列表</a>
         <a href="about.html">關於本站</a>
         <button type="button" id="open-disclaimer">免責聲明</button>
       </div>
@@ -92,30 +94,14 @@
           </div>
           <p class="note">&nbsp;</p>
         </div>
-        <article class="feature">
-          <div class="feature-main">
-            <div class="meta"><span class="pill">Featured</span><span class="pill">2026-03-30 Published</span><span
-                class="pill">2026-03-31 Updated</span></div>
-            <h3 class="title" style="margin:14px 0 16px">組織轉型中的當責領導力：核心重塑、階層實踐與數位敏捷應用的全面解析</h3>
-            <p>本研究從責任與當責的本質差異出發，串接奧茲法則、當責階梯、ARCI、PRA、4DX 與學習型組織，系統化說明企業如何從問責文化轉向當責文化，並進一步應用於敏捷轉型、數位轉型與智慧製造場景。</p>
-            <div class="topics" style="margin-top:18px"><span class="chip">當責領導力</span><span
-                class="chip">組織轉型</span><span class="chip">學習型組織</span><span class="chip">數位轉型</span><span
-                class="chip">智慧製造</span></div>
-            <div class="actions" style="margin-top:22px"><a class="btn"
-                href="articles/260330-當責文化轉型研究與實踐框架.html">閱讀摘要頁</a><a class="btn-alt"
-                href="SAHRE_html/260330-當責文化轉型研究與實踐框架.html">閱讀完整全文</a></div>
-          </div>
-          <aside class="feature-side">
-            <span class="section-eyebrow">Research Lens</span>
-            <p style="margin-bottom:12px">這篇文章適合作為以下議題的起點：</p>
-            <ul>
-              <li>從策略落差與執行失靈問題，重新定義組織內的 ownership。</li>
-              <li>建立高階、中階與基層在轉型期各自的當責角色與對話節奏。</li>
-              <li>把工業4.0、敏捷治理與文化成熟度模型放進同一套轉型敘事。</li>
-              <li>設計能長期內化為組織習慣的當責文化與學習機制。</li>
-            </ul>
-          </aside>
-        </article>
+        <div class="carousel" id="featured-carousel">
+          <div class="carousel-track" id="carousel-track"></div>
+        </div>
+        <div class="carousel-nav" id="carousel-nav" hidden>
+          <button class="carousel-btn" id="carousel-prev" aria-label="上一篇">&#8592;</button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <button class="carousel-btn" id="carousel-next" aria-label="下一篇">&#8594;</button>
+        </div>
       </div>
     </section>
     <section id="explore">
@@ -129,13 +115,12 @@
         <div class="explorer">
           <div class="explorer-grid">
             <div>
-              <div class="search"><span aria-hidden="true">⌕</span><input type="text" placeholder="例如：智慧製造、當責文化、敏捷轉型"
-                  aria-label="搜尋研究主題"></div>
-              <div class="topics" style="margin-top:18px"><a class="chip" href="#featured">當責領導力</a><a class="chip"
-                  href="#featured">當責文化</a><a class="chip" href="#featured">智慧製造</a><a class="chip" href="#featured">數位轉型</a><a
-                  class="chip" href="#featured">企業轉型</a><a class="chip" href="#featured">文化重塑</a><a class="chip"
-                  href="#featured">工業4.0</a><a class="chip" href="#featured">學習型組織</a><a class="chip" href="#featured">敏捷轉型</a><a
-                  class="chip" href="#featured">管理研究</a></div>
+              <div class="search">
+                <span aria-hidden="true">⌕</span>
+                <input type="text" id="search-input" placeholder="例如：智慧製造、當責文化、敏捷轉型" aria-label="搜尋研究主題">
+                <button type="button" id="search-clear" class="search-clear" aria-label="清除搜尋">×</button>
+              </div>
+              <div class="topics" id="keyword-chips" style="margin-top:18px"></div>
             </div>
             <aside class="aside">
               <span class="section-eyebrow">Publishing Direction</span>
@@ -152,14 +137,8 @@
               <span class="section-eyebrow">Latest Articles</span>
               <h3 class="title" style="font-size:1.55rem;margin-bottom:0">文章列表</h3>
             </div>
-            <div class="article-row">
-              <div class="article-row-head">
-                <h4>當責領導力：從文化重塑到數位轉型的實踐框架</h4>
-                <span class="pill">2026-03-31</span>
-              </div>
-              <p>本研究從責任與當責的本質差異出發，串接奧茲法則、當責階梯、ARCI、PRA、4DX 與學習型組織，系統化說明企業如何從問責文化轉向當責文化，並進一步應用於敏捷轉型、數位轉型與智慧製造場景。</p>
-              <div class="actions" style="margin-top:12px"><a class="btn-alt" href="articles/260330-當責文化轉型研究與實踐框架.html">前往摘要頁</a><a class="btn-alt" href="SAHRE_html/260330-當責文化轉型研究與實踐框架.html">直接讀全文</a></div>
-            </div>
+            <p class="search-status" id="search-status"></p>
+            <div id="article-list"></div>
           </div>
         </div>
       </div>
@@ -181,7 +160,7 @@
   </main>
   <footer class="footer">
     <p>© 2026 AIMS Fellows. Research notes on smart manufacturing, digital transformation and organizational change.</p>
-    <button class="btn-alt" type="button" id="open-disclaimer-footer">查看免責聲明</button>
+    <button class="btn-alt" type="button" id="open-disclaimer-footer">免責聲明</button>
   </footer>
   <dialog id="disclaimer">
     <div class="dialog-body">
@@ -202,6 +181,243 @@
       const inside = box.top <= event.clientY && event.clientY <= box.bottom && box.left <= event.clientX && event.clientX <= box.right;
       if (!inside) dialog.close();
     });
+  </script>
+  <script>
+    (function () {
+      var currentSlide = 0;
+      var totalSlides = 0;
+      var allArticles = [];
+      var _searchActive = false;
+
+      function esc(str) {
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function highlightText(rawStr, query) {
+        var escaped = esc(String(rawStr || ''));
+        if (!query) return escaped;
+        var safeQ = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return escaped.replace(new RegExp('(' + safeQ + ')', 'gi'), '<mark>$1</mark>');
+      }
+
+      function matchesQuery(article, query) {
+        if (!query) return true;
+        return [
+          article.title, article.headline, article.description,
+          (article.keywords || []).join(' '),
+          (article.lens || []).join(' ')
+        ].join(' ').toLowerCase().indexOf(query.toLowerCase()) !== -1;
+      }
+
+      function buildCarousel(articles) {
+        var track = document.getElementById('carousel-track');
+        var nav = document.getElementById('carousel-nav');
+        var dots = document.getElementById('carousel-dots');
+        totalSlides = articles.length;
+
+        articles.forEach(function (a, i) {
+          /* ── slide ── */
+          var slide = document.createElement('article');
+          slide.className = 'feature carousel-slide';
+          slide.setAttribute('aria-label', esc(a.title));
+
+          var pills = '';
+          if (a.updatedDate) pills += '<span class="pill">' + esc(a.updatedDate) + ' Updated</span>';
+          if (!a.updatedDate && a.publishedDate) pills += '<span class="pill">' + esc(a.publishedDate) + ' Published</span>';
+          
+
+          var chips = (a.keywords || []).map(function (k) {
+            return '<span class="chip">' + esc(k) + '</span>';
+          }).join('');
+
+          var lensItems = (a.lens || []).map(function (l) {
+            return '<li>' + esc(l) + '</li>';
+          }).join('');
+
+          slide.innerHTML =
+            '<div class="feature-main">'
+            + '<div class="meta">' + pills + '</div>'
+            + '<h4 class="eyebrow">' + esc(a.title) + '</h4>'
+            + '<h3 class="title" style="margin:14px 0 16px">' + esc(a.headline) + '</h3>'
+            + '<p>' + esc(a.description) + '</p>'
+            + '<div class="topics" style="margin-top:18px">' + chips + '</div>'
+            + '<div class="actions" style="margin-top:22px">'
+            + '<a class="btn" href="' + esc(a.articlePath) + '">閱讀摘要頁</a>'
+            + '<a class="btn-alt" href="' + esc(a.fullTextPath) + '">閱讀完整全文</a>'
+            + '</div>'
+            + '</div>'
+            + '<aside class="feature-side">'
+            + '<span class="section-eyebrow">Research Lens</span>'
+            + '<p style="margin-bottom:12px">這篇文章適合作為以下議題的起點：</p>'
+            + '<ul>' + lensItems + '</ul>'
+            + '</aside>';
+
+          track.appendChild(slide);
+
+          /* ── dot ── */
+          var dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', '第 ' + (i + 1) + ' 篇');
+          dot.addEventListener('click', (function (idx) {
+            return function () { goToSlide(idx); };
+          }(i)));
+          dots.appendChild(dot);
+        });
+
+        if (totalSlides > 1) {
+          nav.removeAttribute('hidden');
+        }
+
+        document.getElementById('carousel-prev').addEventListener('click', function () { goToSlide(currentSlide - 1); });
+        document.getElementById('carousel-next').addEventListener('click', function () { goToSlide(currentSlide + 1); });
+
+        updateCarousel();
+      }
+
+      function goToSlide(n) {
+        currentSlide = Math.max(0, Math.min(n, totalSlides - 1));
+        updateCarousel();
+      }
+
+      function updateCarousel() {
+        var track = document.getElementById('carousel-track');
+        track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+
+        document.querySelectorAll('.carousel-dot').forEach(function (d, i) {
+          d.classList.toggle('active', i === currentSlide);
+        });
+
+        var prevBtn = document.getElementById('carousel-prev');
+        var nextBtn = document.getElementById('carousel-next');
+        if (prevBtn) prevBtn.disabled = (currentSlide === 0);
+        if (nextBtn) nextBtn.disabled = (currentSlide === totalSlides - 1);
+      }
+
+      function buildArticleList(articles, query) {
+        var list = document.getElementById('article-list');
+        if (!list) return;
+        list.innerHTML = '';
+
+        var q = (query || '').trim();
+        var filtered = q
+          ? articles.filter(function (a) { return matchesQuery(a, q); })
+          : articles;
+
+        var statusEl = document.getElementById('search-status');
+        if (statusEl) {
+          statusEl.textContent = q
+            ? (filtered.length ? '找到 ' + filtered.length + ' 篇相關文章' : '沒有符合「' + q + '」的文章')
+            : '';
+        }
+
+        filtered.forEach(function (a) {
+          var row = document.createElement('div');
+          row.className = 'article-row';
+
+          var dateLabel = a.updatedDate
+            ? esc(a.updatedDate) + ' Updated'
+            : a.publishedDate ? esc(a.publishedDate) + ' Published' : '';
+
+          var chips = (a.keywords || []).map(function (k) {
+            return '<span class="chip">' + highlightText(k, q) + '</span>';
+          }).join('');
+
+          row.innerHTML =
+            '<div class="article-row-head">'
+            + '<h4 class="eyebrow">' + highlightText(a.title, q) + '</h4>'
+            + (dateLabel ? '<span class="pill">' + dateLabel + '</span>' : '')
+            + '</div>'
+            + '<p>' + highlightText(a.description, q) + '</p>'
+            + '<div class="topics" style="margin-top:10px">' + chips + '</div>'
+            + '<div class="actions" style="margin-top:12px">'
+            + '<a class="btn-alt" href="' + esc(a.articlePath) + '">前往摘要頁</a>'
+            + '<a class="btn-alt" href="' + esc(a.fullTextPath) + '">直接讀全文</a>'
+            + '</div>';
+
+          list.appendChild(row);
+        });
+      }
+
+      function buildKeywordChips(articles) {
+        var chipsEl = document.getElementById('keyword-chips');
+        if (!chipsEl) return;
+        var seen = {};
+        var keywords = [];
+        articles.forEach(function (a) {
+          (a.keywords || []).forEach(function (k) {
+            if (!seen[k]) { seen[k] = true; keywords.push(k); }
+          });
+        });
+        chipsEl.innerHTML = '';
+        keywords.forEach(function (k) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'chip keyword-chip';
+          btn.textContent = k;
+          btn.addEventListener('click', function () {
+            var input = document.getElementById('search-input');
+            if (input) { input.value = k; triggerSearch(k); input.focus(); }
+          });
+          chipsEl.appendChild(btn);
+        });
+      }
+
+      function triggerSearch(query) {
+        var q = (query || '').trim();
+        var listEl = document.getElementById('article-list');
+        if (q.length > 0) {
+          if (!_searchActive) {
+            // Lock the current rendered height BEFORE the DOM changes.
+            // This prevents the container from shrinking, which keeps the
+            // scroll position stable — no layout jump.
+            if (listEl) listEl.style.minHeight = listEl.offsetHeight + 'px';
+            _searchActive = true;
+          }
+        } else {
+          _searchActive = false;
+          if (listEl) listEl.style.minHeight = '';
+        }
+        buildArticleList(allArticles, q);
+        var clearBtn = document.getElementById('search-clear');
+        if (clearBtn) clearBtn.classList.toggle('visible', q.length > 0);
+      }
+
+      function initSearch() {
+        var input = document.getElementById('search-input');
+        var clearBtn = document.getElementById('search-clear');
+        if (!input) return;
+        input.addEventListener('input', function () { triggerSearch(input.value); });
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            input.value = '';
+            triggerSearch('');
+            input.focus();
+          });
+        }
+      }
+
+      function init() {
+        if (typeof AIMS_ARTICLES === 'undefined' || !AIMS_ARTICLES.length) {
+          console.warn('AIMS_ARTICLES not found. Check articles-data.js.');
+          return;
+        }
+        allArticles = AIMS_ARTICLES;
+        buildCarousel(allArticles.filter(function (a) { return a.carouselShow; }));
+        buildKeywordChips(allArticles);
+        buildArticleList(allArticles, '');
+        initSearch();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    }());
   </script>
 </body>
 

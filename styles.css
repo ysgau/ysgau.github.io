@@ -484,3 +484,127 @@ dialog::backdrop {
     padding-top: 34px
   }
 }
+
+/* ── Featured Carousel ───────────────────────────────────── */
+.carousel {
+  position: relative;
+  background: rgba(255, 253, 248, .9);
+  border: 1px solid rgba(24, 32, 51, .08);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform .45s cubic-bezier(.4, 0, .2, 1)
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0
+}
+
+/* cancel the double-border / shadow when .feature is inside carousel */
+.carousel .feature {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent
+}
+
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px
+}
+
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 107, 99, .2);
+  background: var(--paper);
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: grid;
+  place-items: center;
+  transition: background .2s, border-color .2s
+}
+
+.carousel-btn:hover {
+  background: rgba(15, 107, 99, .08);
+  border-color: rgba(15, 107, 99, .4)
+}
+
+.carousel-btn:disabled {
+  opacity: .35;
+  cursor: default
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: rgba(15, 107, 99, .2);
+  cursor: pointer;
+  transition: width .25s ease, background .25s ease
+}
+
+.carousel-dot.active {
+  width: 22px;
+  background: var(--accent)
+}
+
+/* ── Search ─────────────────────────────────────────────── */
+.search-clear {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 2px 6px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .9rem;
+  line-height: 1;
+  flex-shrink: 0;
+  border-radius: 999px
+}
+
+.search-clear:hover {
+  background: rgba(24, 32, 51, .06);
+  color: var(--ink)
+}
+
+.search-clear.visible {
+  display: block
+}
+
+.search-status {
+  margin: 10px 0 0;
+  font-size: .86rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-height: 1.4em
+}
+
+mark {
+  background: rgba(15, 107, 99, .15);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px
+}
+
+#explore {
+  scroll-margin-top: 80px
+}

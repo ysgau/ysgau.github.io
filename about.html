@@ -1,27 +1,142 @@
-<section id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <div><span class="section-eyebrow">About This Site</span>
-        <h2 class="title">研究方向與更新說明</h2>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於本站 | AIMS Fellows</title>
+  <meta name="description" content="AIMS Fellows 研究方向、內容定位、發佈說明與聯絡資訊。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AIMS Fellows">
+  <meta property="og:title" content="關於本站 | AIMS Fellows">
+  <meta property="og:description" content="AIMS Fellows 研究方向、內容定位、發佈說明與聯絡資訊。">
+  <meta property="og:url" content="https://aimsfellows.ai/about.html">
+  <link rel="canonical" href="https://aimsfellows.ai/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="nav" aria-label="主選單">
+    <div class="nav-row">
+      <a class="brand" href="index.html" aria-label="AIMS Fellows 首頁"><span class="mark">AI</span><span><strong>AIMS
+            Fellows</strong><span>Research on Smart Manufacturing and Organizational Transformation</span></span></a>
+      <div class="links">
+        <a href="index.html#explore">研究主題</a>
+        <a href="index.html#featured">精選文章</a>
+        <a href="index.html">首頁</a>
+        <button type="button" id="open-disclaimer">免責聲明</button>
       </div>
-      <p class="note">AIMS Fellows 以研究脈絡為核心，不追求即時新聞式輸出，而是持續整理可長期引用的轉型知識內容。</p>
     </div>
-    <div class="about">
-      <article>
-        <h3>內容定位</h3>
-        <p>本站將陸續分享智慧製造、數位轉型、企業轉型、文化重塑、工業4.0、當責領導力、當責文化、組織轉型、學習型組織、敏捷轉型、智慧工廠、製造業升級、管理研究與組織文化等主題。</p>
-        <p style="margin-top:14px">每篇內容將以 Markdown 原稿、摘要頁與完整渲染頁三層結構維護，降低首頁負擔，同時保留未來擴充時的可維護性。</p>
-      </article>
-      <article>
-        <h3>Publishing Note</h3>
-        <p>目前網站已完成首頁入口化重構，後續新增文章時將沿用一致的資料欄位與 metadata 機制。</p>
-        <div class="contact">
-          <div class="box"><strong>聯絡信箱</strong><br><a
-              href="mailto:aimsfellows.ai@gmail.com">aimsfellows.ai@gmail.com</a>
+  </nav>
+
+  <main id="top">
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-eyebrow">About This Site</span>
+            <h1 class="title">研究方向與更新說明</h1>
           </div>
-          <div class="box"><strong>閱讀提醒</strong><br>研究內容以分析、整理與實務框架建議為主，不構成法律、財務或特定專案的直接保證。</div>
+          <p class="note">AIMS Fellows 以研究脈絡為核心，不追求即時新聞式輸出，而是持續整理可長期引用的轉型知識內容。</p>
         </div>
-      </article>
+        <div class="about">
+          <article>
+            <h3>內容定位</h3>
+            <p>本站聚焦智慧製造、數位轉型、企業轉型、文化重塑、工業4.0、當責領導力、當責文化、組織轉型、學習型組織、敏捷轉型、智慧工廠、製造業升級、管理研究與組織文化等主題。</p>
+            <p style="margin-top:14px">每篇內容以互動摘要頁與完整渲染全文兩層結構維護，降低首頁負擔，同時保留未來擴充時的可維護性。</p>
+            <p style="margin-top:14px">摘要頁（<code>articles/</code>）以互動式視覺設計呈現核心論點、框架圖與適用情境，協助讀者快速掌握研究脈絡；完整全文頁（<code>SAHRE_html/</code>）則保留完整敘事與延伸閱讀路徑。</p>
+          </article>
+          <article>
+            <h3>Publishing Note</h3>
+            <p>本站採手工策展方式更新，每篇研究均確認架構完整、引用脈絡可追溯後才發佈。目前已完成首頁入口化重構，後續新增文章時將沿用一致的資料欄位與 metadata 機制。</p>
+            <div class="contact">
+              <div class="box">
+                <strong>聯絡信箱</strong><br>
+                <a href="mailto:aimsfellows.ai@gmail.com">aimsfellows.ai@gmail.com</a>
+              </div>
+              <div class="box">
+                <strong>閱讀提醒</strong><br>
+                研究內容以分析、整理與實務框架建議為主，不構成法律、財務或特定專案的直接保證。詳見下方免責聲明。
+              </div>
+              <div class="box">
+                <strong>更新節奏</strong><br>
+                不定期更新，以確保每篇內容具備完整的研究脈絡與論證結構為優先，而非追求發佈頻率。
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="section-eyebrow">Content Architecture</span>
+            <h2 class="title">三層內容結構</h2>
+          </div>
+          <p class="note">每篇研究均以三個層次提供閱讀入口，讀者可依需求選擇閱讀深度。</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="meta"><span class="pill">Layer 1</span></div>
+            <h3>Markdown 原稿</h3>
+            <p>位於 <code>SHARE_md/</code>，保存完整研究筆記與引用結構，供後續擴充與版本追蹤使用。</p>
+          </article>
+          <article class="card">
+            <div class="meta"><span class="pill">Layer 2</span></div>
+            <h3>互動摘要頁</h3>
+            <p>位於 <code>articles/</code>，以互動式視覺設計呈現核心論點、框架圖與適用情境，協助讀者快速進入研究脈絡。</p>
+            <div class="actions" style="margin-top:14px">
+              <a class="btn-alt" href="articles/260330-當責文化轉型研究與實踐框架.html">查看範例</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="meta"><span class="pill">Layer 3</span></div>
+            <h3>完整渲染全文</h3>
+            <p>位於 <code>SAHRE_html/</code>，保留完整敘事、延伸閱讀與細節論證，適合深度閱讀與引用參考。</p>
+            <div class="actions" style="margin-top:14px">
+              <a class="btn-alt" href="SAHRE_html/260330-當責文化轉型研究與實踐框架.html">查看範例</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 AIMS Fellows. Research notes on smart manufacturing, digital transformation and organizational change.</p>
+    <button class="btn-alt" type="button" id="open-disclaimer-footer">查看免責聲明</button>
+  </footer>
+
+  <dialog id="disclaimer">
+    <div class="dialog-body">
+      <span class="section-eyebrow">Disclaimer</span>
+      <h2 class="title" style="margin-bottom:12px">免責聲明</h2>
+      <p>本站內容以研究整理、管理分析與知識分享為目的，資料可能來自學術文獻、案例研究與公開資訊整合。內容雖盡力求準確，但不構成個別企業、投資、法規或專案決策的直接保證與專業背書。</p>
+      <p style="margin-top:14px">若你需要將本文觀點直接用於企業制度設計、數位轉型專案、人才管理或法遵決策，仍應結合所在情境的實際資料與專業判斷。</p>
+      <div class="actions" style="margin-top:22px"><button class="btn-alt" type="button"
+          id="close-disclaimer">關閉</button></div>
     </div>
-  </div>
-</section>
+  </dialog>
+
+  <script>
+    const dialog = document.getElementById("disclaimer");
+    [document.getElementById("open-disclaimer"), document.getElementById("open-disclaimer-footer")].forEach((button) => button.addEventListener("click", () => dialog.showModal()));
+    document.getElementById("close-disclaimer").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      const box = dialog.getBoundingClientRect();
+      const inside = box.top <= event.clientY && event.clientY <= box.bottom && box.left <= event.clientX && event.clientX <= box.right;
+      if (!inside) dialog.close();
+    });
+  </script>
+</body>
+
+</html>

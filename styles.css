@@ -608,3 +608,35 @@ mark {
 #explore {
   scroll-margin-top: 80px
 }
+
+/* ── GitHub Star float ───────────────────────────────────── */
+.gh-star-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: var(--paper);
+  border: 1px solid rgba(24, 32, 51, .1);
+  border-radius: 14px;
+  padding: 10px 16px 12px;
+  box-shadow: 0 4px 24px rgba(24, 32, 51, .13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  transition: box-shadow .2s, transform .2s
+}
+
+.gh-star-float:hover {
+  box-shadow: 0 8px 32px rgba(24, 32, 51, .2);
+  transform: translateY(-2px)
+}
+
+.gh-star-label {
+  margin: 0;
+  font-size: .72rem;
+  color: var(--muted);
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: .02em;
+  white-space: nowrap
+}

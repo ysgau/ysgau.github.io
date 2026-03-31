@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta name="description" content="AIMS Fellows research website">
+    <link rel="canonical" href="https://aimsfellows.ai/" />
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; }
         .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 400px; max-height: 50vh; }
@@ -28,7 +30,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="text-xl font-bold text-sky-700 tracking-wider">ACCOUNTABILITY</span>
+                    <button id="open-disclaimer-btn" class="flex items-center text-slate-500 hover:text-sky-600 transition duration-300 group focus:outline-none">
+                        <span class="text-xl md:text-2xl mr-1.5 group-hover:scale-110 transition-transform">ⓘ</span>
+                        <span class="text-sm font-bold tracking-widest uppercase">免責聲明</span>
+                    </button>
                 </div>
                 <div class="hidden md:flex items-center space-x-6">
                     <a href="#core" class="text-sm font-medium text-slate-600 hover:text-sky-600 transition">核心精華</a>
@@ -54,7 +59,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12 text-center">
                 <h2 class="text-3xl font-bold text-slate-900">1. 當責領導力的核心</h2>
-                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">當責（Accountability）超越了傳統的負責（Responsibility）。<br>負責是「把份內事情做完」，當責是「確保最終結果達成」。</p>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">當責（Accountability）超越了傳統的負責（Responsibility）。負責是「把份內事情做完」，當責是「確保最終結果達成」。</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -168,15 +173,15 @@
 
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/3 flex flex-row md:flex-col gap-2 overflow-x-auto pb-2 md:pb-0">
-                    <button class="role-btn active px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-slate-50 whitespace-nowrap md:whitespace-normal" data-role="top">
+                    <button class="role-btn active px-6 py-4 text-left font-bold rounded-xl border border-sky-600 bg-sky-600 text-white whitespace-nowrap md:whitespace-normal transition-colors duration-200" data-role="top">
                         <div class="text-lg">高階主管</div>
                         <div class="text-sm font-normal opacity-80 mt-1">塑造經驗與文化</div>
                     </button>
-                    <button class="role-btn px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 whitespace-nowrap md:whitespace-normal" data-role="middle">
+                    <button class="role-btn px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 whitespace-nowrap md:whitespace-normal transition-colors duration-200" data-role="middle">
                         <div class="text-lg">中階主管</div>
                         <div class="text-sm font-normal opacity-80 mt-1">連結縫隙與賦能</div>
                     </button>
-                    <button class="role-btn px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 whitespace-nowrap md:whitespace-normal" data-role="front">
+                    <button class="role-btn px-6 py-4 text-left font-bold rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 whitespace-nowrap md:whitespace-normal transition-colors duration-200" data-role="front">
                         <div class="text-lg">基層員工</div>
                         <div class="text-sm font-normal opacity-80 mt-1">執行與向上當責</div>
                     </button>
@@ -250,10 +255,10 @@
     <section id="framework" class="py-20 bg-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-16 text-center">
-                <h2 class="text-3xl font-black text-slate-900 mb-4">5. 「當責呼吸論」實踐框架</h2>
+                <h2 class="text-3xl font-black text-slate-900 mb-4">5. 「當責」實踐框架</h2>
                 <p class="text-lg text-slate-600 max-w-3xl mx-auto">
                     為使當責成為企業核心，我們必須將 <strong class="text-sky-700">當責 (SOSD)</strong> 與 <strong class="text-teal-700">學習型組織 (彼得·聖吉五項修練)</strong> 深度融合。
-                    這套設計將當責化為生理機能的隱喻：像呼吸空氣般自然運作，持續推動企業有機成長。
+                    這套設計旨在讓當責文化融入每日工作之中，成為由下而上自主驅動的自然行為。如同員工每天呼吸的空氣般，無須刻意提醒，卻是企業永續成長不可或缺的基石。
                 </p>
             </div>
 
@@ -269,44 +274,40 @@
                         <div class="framework-step relative pl-0 md:pl-16">
                             <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-sky-500 items-center justify-center border-4 border-white shadow"></div>
                             <h4 class="text-xl font-bold text-sky-800 flex items-center">
-                                <span class="bg-sky-100 text-sky-800 text-sm px-2 py-1 rounded mr-3">吸氣</span> 
                                 正視與願景 (See it + Shared Vision)
                             </h4>
                             <p class="mt-2 text-slate-600 text-sm">
-                                吸入外部資訊與組織目標。領導者建立<strong class="text-slate-800">共同願景</strong>，員工則以客觀數據<strong class="text-slate-800">正視現狀</strong>。看清全局的「空氣品質」，絕不忽視房間裡的大象。
+                                汲取外部資訊與錨定組織目標。領導者建立<strong class="text-slate-800">共同願景</strong>，員工則以客觀數據<strong class="text-slate-800">正視現狀</strong>。看清全局的真實狀況，絕不忽視房間裡的大象。
                             </p>
                         </div>
 
                         <div class="framework-step relative pl-0 md:pl-16">
                             <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-teal-500 items-center justify-center border-4 border-white shadow"></div>
                             <h4 class="text-xl font-bold text-teal-800 flex items-center">
-                                <span class="bg-teal-100 text-teal-800 text-sm px-2 py-1 rounded mr-3">內化</span> 
                                 承擔與心智 (Own it + Mental Models)
                             </h4>
                             <p class="mt-2 text-slate-600 text-sm">
-                                氧氣交換過程。挑戰舊有推諉的<strong class="text-slate-800">心智模式</strong>，將系統問題轉化為個人責任。從「那是別人的錯」轉念為「我能在這其中<strong class="text-slate-800">承擔什麼責任</strong>」。
+                                挑戰舊有推諉的<strong class="text-slate-800">心智模式</strong>，將系統問題轉化為個人責任。從「那是別人的錯」轉念為「我能在這其中<strong class="text-slate-800">承擔什麼責任</strong>」。
                             </p>
                         </div>
 
                         <div class="framework-step relative pl-0 md:pl-16">
                             <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-blue-500 items-center justify-center border-4 border-white shadow"></div>
                             <h4 class="text-xl font-bold text-blue-800 flex items-center">
-                                <span class="bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded mr-3">循環</span> 
                                 解決與共學 (Solve it + Team Learning)
                             </h4>
                             <p class="mt-2 text-slate-600 text-sm">
-                                養分隨血液傳遞至全身。面對挑戰，透過<strong class="text-slate-800">團隊學習</strong>進行深度匯談，打破部門穀倉，共同設計創新<strong class="text-slate-800">解決方案</strong>。修補組織內的當責縫隙。
+                                面對挑戰，透過<strong class="text-slate-800">團隊學習</strong>進行深度匯談，打破部門穀倉，共同設計創新<strong class="text-slate-800">解決方案</strong>。修補組織內的當責縫隙。
                             </p>
                         </div>
 
                         <div class="framework-step relative pl-0 md:pl-16">
                             <div class="hidden md:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-indigo-500 items-center justify-center border-4 border-white shadow"></div>
                             <h4 class="text-xl font-bold text-indigo-800 flex items-center">
-                                <span class="bg-indigo-100 text-indigo-800 text-sm px-2 py-1 rounded mr-3">呼氣</span> 
                                 執行與超越 (Do it + Personal Mastery)
                             </h4>
                             <p class="mt-2 text-slate-600 text-sm">
-                                產生動能並呼出結果。不僅是<strong class="text-slate-800">著手完成</strong>任務，更是實踐<strong class="text-slate-800">自我超越</strong>。將結果轉化為組織的「新經驗」，持續優化下一次的呼吸循環。
+                                不僅是<strong class="text-slate-800">著手完成</strong>任務，更是實踐<strong class="text-slate-800">自我超越</strong>。將結果轉化為組織的「新經驗」，持續優化下一次的行動循環。
                             </p>
                         </div>
                     </div>
@@ -321,7 +322,7 @@
                                 <h3 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-br from-sky-600 to-indigo-600 mb-2">系統思考</h3>
                                 <p class="text-xs text-slate-500 max-w-xs px-4">
                                     (Systems Thinking)<br><br>
-                                    如同包裹著呼吸循環的「空間」。<br>
+                                    如同包裹著日常運作的無形空氣。<br>
                                     唯有看見系統的整體動態，<br>
                                     當責行動才不會流於局部優化，<br>
                                     而是促進組織的全面進化。
@@ -335,13 +336,366 @@
         </div>
     </section>
 
+    <section id="references" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold text-slate-900">參考連結</h2>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">本研究與實踐框架之參考文獻與實務案例來源</p>
+            </div>
+            
+            <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-200">
+                <ul class="grid md:grid-cols-2 gap-4 text-sm text-slate-600">
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.franklincovey.com/courses/the-4-disciplines/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">franklincovey.com - The 4 Disciplines of Execution® | FranklinCovey</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://tickthoseboxes.com.au/accountability-vs-responsibility-understanding-the-key-differences/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">tickthoseboxes.com.au - Accountability Vs. Responsibility: Understanding the Key Differences - Tick Those Boxes</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.edstellar.com/blog/accountability-vs-responsibility" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">edstellar.com - Accountability vs. Responsibility: Understanding the Top 20 Workplace Differences</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.cite.com.tw/book?id=81439" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">cite.com.tw - 當責式管理經典叢書-城邦讀書花園網路書店</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.airitilibrary.com/Article/Detail/15609251-199903-x-1-163-185-a" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">airitilibrary.com - 華人的企業文化與生産力= Chinese Corporate Culture and Productivity - 華藝線上圖書館</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://brooklynworks.brooklaw.edu/cgi/viewcontent.cgi?article=1234&context=bjcfcl" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">brooklynworks.brooklaw.edu - Accountability in Corporate Governance in China and The Impact of Guanxi as A Double-Edged Sword - BrooklynWorks</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.researchgate.net/publication/5231686_Is_hierarchy_the_only_answer_The_accountability_preferences_of_Chinese_public_employees_in_public_service_delivery" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">researchgate.net - (PDF) Is hierarchy the only answer? The accountability preferences of Chinese public employees in public service delivery - ResearchGate</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://vocus.cc/article/67692ed4fd89780001228dd9" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">vocus.cc - 解析【ARCI 當責模型】：讓責任分配化繁為簡的利器 - 方格子</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="http://tatunglets.blogspot.com/2017/06/blog-post_16.html" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">tatunglets.blogspot.com - 好書介紹(關於奧茲法則)：當責，從停止抱怨開始：克服被害者心態，才能交出成果、達成目標！</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://culturepartners.com/insights/4-steps-to-creating-a-culture-of-accountability/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">culturepartners.com - 4 Steps to Creating a Culture of Accountability</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://en.wikipedia.org/wiki/The_Oz_Principle" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">en.wikipedia.org - The Oz Principle - Wikipedia</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.getabstract.com/en/summary/the-oz-principle/3882" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">getabstract.com - The Oz Principle Free Summary by Roger Connors et al. - getAbstract</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://sobrief.com/books/the-oz-principle" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">sobrief.com - The Oz Principle | Summary, Audio, Quotes, FAQ - SoBrief</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://flown.com/blog/deep-work/accountability-ladder" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">flown.com - Full guide on accountability ladder: 8 levels you must know - Flown</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://leadershipforumcommunity.org/resource/the-ladder-of-accountability-an-8-step-framework/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">leadershipforumcommunity.org - The Ladder of Accountability An 8-Step Framework - Leadership Forum Community</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://culturepartners.com/insights/overcoming-resistance-to-change/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">culturepartners.com - Overcoming Resistance to Change - Culture Partners</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.execonline.com/from-above-and-below-overcoming-a-culture-of-change-resistance/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">execonline.com - From Above and Below: Overcoming A Culture of Change Resistance - ExecOnline</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.businessweekly.com.tw/management/blog/3019491" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">businessweekly.com.tw - 口號喊3年，公司原地打轉？當責文化卡關的真相是⋯－彭建文專欄 ...</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.yourthoughtpartner.com/blog/resistance-to-change-in-the-workplace" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">yourthoughtpartner.com - How to Overcome Resistance to Change in the Workplace - The Grossman Group</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://vinemgmt.cc/5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E7%95%B6%E8%B2%AC%E6%96%87%E5%8C%96%E7%95%B6%E8%B2%AC%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%B4%A0%E7%95%B6%E8%B2%AC%E8%B2%A0%E8%B2%AC%E5%B7%AE%E7%95%B0%E5%8F%8A%E6%A1%88/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">vinemgmt.cc - 如何打造當責文化？當責基本要素、當責負責差異及案例解析 - 康士藤管理顧問</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://vocus.cc/article/69b959c1fd89780001199c6e" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">vocus.cc - 建立團隊當責文化：從推卸責任到主動承擔的五大策略</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.orghealthteam.com/articles/the-four-accountability-cultures-and-how-to-improve-yours" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">orghealthteam.com - The Four Accountability Cultures (and How to Improve Yours) | OrgHealth</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.aihr.com/blog/accountability-in-the-workplace/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">aihr.com - Accountability in the Workplace: Your 9-Step Guide to Building It - AIHR</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.gvm.com.tw/article/46461" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">gvm.com.tw - 一段對話，五個步驟，落實當責文化 - 遠見雜誌</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.betterworks.com/magazine/accountability-in-leadership" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">betterworks.com - Leadership Accountability: How to Build It Into Your Culture | Betterworks</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://predictableprofits.com/5-steps-to-build-leadership-accountability/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">predictableprofits.com - 5 Steps to Build Leadership Accountability - Predictable Profits</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://thetransformation.company/accountability-framework-business/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">thetransformation.company - Unlock Growth: Your Accountability Framework Business Plan</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://zrgpartners.com/insights/the-power-of-leadership-in-culture-transformation" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">zrgpartners.com - The Power of Leadership in Culture Transformation - ZRG Partners</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.imd.org/research-knowledge/business-transformation/case-studies/e-seven-stages-of-culture-transformation/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">imd.org - The seven stages of culture transformation - IMD business school for management and leadership courses</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.betterworks.com/magazine/accountability-in-leadership/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">betterworks.com - Leadership Accountability: How to Build It Into Your Culture ...</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://vinemgmt.cc/class-lead-by-accountability/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">vinemgmt.cc - 當責領導力課程 - 康士藤管理顧問</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.franklincovey.com/courses/the-4-disciplines/discipline-4-accountability/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">franklincovey.com - Discipline 4: Create a Cadence of Accountability | FranklinCovey</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.axiomstrategic.com/blog/creating-a-culture-of-accountability-4-simple-steps" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">axiomstrategic.com - Creating a Culture of Accountability - 4 Simple Steps - Axiom Strategic Consulting</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://sajbm.org/index.php/sajbm/article/view/4207/2875" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">sajbm.org - Empowering employees for digital transformation in manufacturing enterprises: A case study</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://uhr.rutgers.edu/performance-management/sample-performance-standards-general" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">uhr.rutgers.edu - Sample Performance Standards - General Performance Standards | uhr.rutgers.edu</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www3.weforum.org/docs/WEF_Leading_through_the_Fourth_Industrial_Revolution.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">www3.weforum.org - Leading through the Fourth Industrial Revolution Putting People at the Centre - World Economic Forum publications</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.pedowitzgroup.com/how-do-you-handle-accountability-in-agile-teams" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">pedowitzgroup.com - How do you handle accountability in agile teams? - The Pedowitz Group</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.mountaingoatsoftware.com/blog/five-pillars-of-a-successful-agile-transformation" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">mountaingoatsoftware.com - The Five Pillars of a Successful Agile Transformation - Mountain Goat Software</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.timingasia.com/%E6%8E%A2%E8%A8%8E%E6%95%B8%E4%BD%8D%E8%BD%89%E5%9E%8B%E4%B8%8B%E7%9A%84%E6%95%8F%E6%8D%B7%E7%B5%84%E7%B9%94%E5%9E%8B%E6%85%8B/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">timingasia.com - 探討數位轉型下的敏捷組織型態 - 太毅國際</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://nextagile.ai/blogs/leadership/ownership-and-accountability/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">nextagile.ai - Ownership And Accountability: Guide To Workplace Success - NextAgile</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.scrum.org/resources/blog/whitepaper-stages-agile-transformation-moving-theory-practice" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">scrum.org - Whitepaper: The Stages of Agile Transformation: Moving from Theory To Practice</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.cathayholdings.com/holdings/brand/fintech/ctc/trends/digital_transformation" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">cathayholdings.com - 數位轉型是什麼？八分鐘了解七大好處、轉型三階段與產業案例 - 國泰金控</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.ardoq.com/blog/accountability-framework" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">ardoq.com - How to Effectively Empower Teams With an Accountability Framework - Ardoq</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.researchgate.net/publication/5238671_Digital_Transformation_and_Organizational_Change_Management_Theoretical_Models_and_Case_Studies" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">researchgate.net - (PDF) Digital Transformation and Organizational Change Management: Theoretical Models and Case Studies - ResearchGate</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://profisee.com/blog/data-governance-maturity-model/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">profisee.com - Data Governance Maturity Models: A Complete Guide - Profisee</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://assets.kpmg.com/content/dam/kpmg/ng/pdf/2025/10/Governance%20over%20Digital%20Transformation.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">assets.kpmg.com - Governance over Digital Transformation - KPMG agentic corporate services</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/superagency-in-the-workplace-empowering-people-to-unlock-ais-full-potential-at-work" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">mckinsey.com - AI in the workplace: A report for 2025 - McKinsey</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://digital.intosairussia.org/docs/Digital-Transformation-of-Public-Sector-Cases-and-Best-Practices.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">digital.intosairussia.org - Digital Transformation of Public Sector: Cases and Best Practices</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.universal-robots.com/tw/blog/what-is-industry-4-0-smart-manufacturing-core-impact-applications-future-trends/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">universal-robots.com - 工業4.0是什麼？智慧製造核心、影響面、技術應用、未來布局全方位解析！ - Universal Robots</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.mckinsey.com/capabilities/operations/our-insights/transforming-advanced-manufacturing-through-industry-4-0" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">mckinsey.com - Transforming advanced manufacturing through Industry 4.0 - McKinsey</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.deloitte.com/us/en/insights/industry/manufacturing-industrial-products/industry-4-0/smart-factory-connected-manufacturing.ml" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">deloitte.com - Industry 4.0, smart factory, and connected manufacturing | Deloitte Insights</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.mdpi.com/2199-8531/8/2/68" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">mdpi.com - Smart Production Workers in Terms of Creativity and Innovation: The Implication for Open Innovation - MDPI</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.researchgate.net/publication/0197541_Empowering_employees_for_digital_transformation_in_manufacturing_enterprises_A_case_study" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">researchgate.net - (PDF) Empowering employees for digital transformation in manufacturing enterprises: A case study - ResearchGate</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9530396/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">pmc.ncbi.nlm.nih.gov - Exploring the status of the human operator in Industry 4.0: A systematic review - PMC</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://visualdecisions.com/f/smart-mfg-use-case-series-autonomous-maintenance-support" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">visualdecisions.com - Smart Mfg Use Case Series: Autonomous Maintenance Support - Visual Decisions Inc</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://praxie.com/huddle-boards-in-manufacturing/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">praxie.com - The Ultimate Guide to Huddle Boards in Manufacturing: Boosting Performance - Praxie.com</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://tulip.co/blog/sqcdp-board/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">tulip.co - SQCDP Board: A Visual Management Tool For The Shop Floor - Tulip Interfaces</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://tervene.com/blog/daily-management-system-dms/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">tervene.com - Daily Management System (DMS): From Basics to Launch - Tervene</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://leandatapoint.com/blog/accountability-board-for-shopfloor-excellence" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">leandatapoint.com - The power of digital Accountability Boards in transforming manufacturing excellence - Balanced Scorecard Software</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.mdpi.com/2071-1050/17/23/10674" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">mdpi.com - Integrating Industry 4.0 and Sustainability Toward Attaining Smart Manufacturing Systems</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.perdoo.com/resources/online-guides/4dx" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">perdoo.com - The 4 Disciplines of Execution (4DX): Everything You Need to Know - Perdoo</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.franklincovey.com/create-breakthrough-results/the-4-disciplines-of-execution-4dx-system/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">franklincovey.com - The 4 Disciplines of Execution (4DX) System | FranklinCovey</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.kornferry.com/insights/featured-topics/organizational-transformation/guide-to-mastering-organizational-culture" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">kornferry.com - A Guide to Mastering Organizational Culture Change - Korn Ferry</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.avetta.com/blog/advancing-safety-understanding-the-5-levels-of-safety-maturity" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">avetta.com - Advancing Safety: Understanding the 5 Levels of Safety Maturity | Avetta</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://civilitypartners.com/wp-content/uploads/2024/02/Culture-Maturity-Model.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">civilitypartners.com - Culture Maturity Model - Civility Partners</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.metricstream.com/learn/compliance-maturity-model-stages.html" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">metricstream.com - What is Compliance Maturity Model Stages? | MetricStream</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-sky-500 mr-2 shrink-0">🔗</span>
+                        <a href="https://www.cultureamp.com/blog/organizational-culture-maturity-model" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 hover:underline transition line-clamp-2">cultureamp.com - Organizational culture maturity model - Culture Amp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
         <div class="max-w-7xl mx-auto px-4">
             <p>© 2026 當責領導力研究與實踐框架。以學習型組織理念，打造永續成長的企業文化。</p>
         </div>
     </footer>
 
+    <!-- 免責聲明 Modal -->
+    <div id="disclaimer-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 p-6 md:p-8 transform scale-95 transition-transform duration-300 border border-slate-100">
+            <div class="flex justify-between items-start mb-5">
+                <h3 class="text-xl font-bold text-slate-800 flex items-center">
+                    <span class="text-sky-500 mr-2 text-2xl">ⓘ</span> 網站聲明
+                </h3>
+                <button id="close-modal-btn" class="text-slate-400 hover:text-slate-700 transition focus:outline-none">
+                    <span class="text-3xl leading-none">&times;</span>
+                </button>
+            </div>
+            
+            <div class="text-slate-600 space-y-4 text-sm md:text-base leading-relaxed">
+                <p>本網站內容僅供學術研究與資訊參考之用，並非營利性質之服務。網站所呈現之資料，係由人工蒐集、整理後，交由人工智慧工具進行輔助分析與重組而成。</p>
+                <p>雖已力求資訊之正確性與完整性，惟部分內容仍可能存在誤差或未及更新之情形，使用者應自行審慎判斷並進行必要之查證。</p>
+                <div class="pt-5 mt-5 border-t border-slate-100">
+                    <p class="font-medium text-slate-700 mb-1">聯絡我們</p>
+                    <p>如對網站內容有任何疑問、建議或需進一步聯繫，歡迎來信至：<br>
+                        <a href="mailto:bestinfo.tw@gmail.com" class="text-sky-600 font-bold hover:text-sky-800 hover:underline transition mt-1 inline-block">bestinfo.tw@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 flex justify-end">
+                <button id="close-modal-btn-bottom" class="px-6 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition focus:outline-none focus:ring-2 focus:ring-slate-300">
+                    我了解了
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Modal 邏輯
+        const modal = document.getElementById('disclaimer-modal');
+        const modalContent = modal.querySelector('div');
+        const openBtn = document.getElementById('open-disclaimer-btn');
+        const closeBtns = [document.getElementById('close-modal-btn'), document.getElementById('close-modal-btn-bottom')];
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // 強制重繪以觸發動畫
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // 防止背景捲動
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            document.body.style.overflow = ''; // 恢復背景捲動
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300); // 等待動畫結束
+        }
+
+        openBtn.addEventListener('click', openModal);
+        closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+        
+        // 點擊背景關閉
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 既有的 Role 按鈕邏輯
         const roleData = {
             top: {
                 title: "高階主管：文化塑造者",
@@ -380,16 +734,19 @@
 
         roleBtns.forEach(btn => {
             btn.addEventListener('click', () => {
+                // 1. 重置所有按鈕狀態：移除選中樣式，加回未選中樣式
                 roleBtns.forEach(b => {
                     b.classList.remove('active', 'bg-sky-600', 'text-white', 'border-sky-600');
-                    b.classList.add('bg-white', 'text-slate-600');
+                    b.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                    // 清除之前可能殘留的 inline style
+                    b.style.backgroundColor = '';
+                    b.style.color = '';
+                    b.style.borderColor = '';
                 });
                 
-                btn.classList.add('active');
-                btn.classList.remove('bg-white', 'text-slate-600');
-                btn.style.backgroundColor = '#0284c7';
-                btn.style.color = 'white';
-                btn.style.borderColor = '#0284c7';
+                // 2. 設定被點擊的按鈕為選中狀態
+                btn.classList.add('active', 'bg-sky-600', 'text-white', 'border-sky-600');
+                btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200', 'hover:bg-slate-50');
 
                 const role = btn.getAttribute('data-role');
                 const data = roleData[role];
